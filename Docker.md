@@ -17,7 +17,7 @@ docker exec -it (CONTAINER'S NAME) /bin/bash
 ## 3. Install Packages
 ```sh, bash, zsh
 apt update && apt upgrade -y && \
-apt install -y zsh git curl wget neovim zsh-syntax-highlighting zsh-autosuggestions && \
+apt install -y zsh git curl wget neovim && \
 apt install -y build-essential python3 python-is-python3 python3-poetry nodejs npm && \
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
