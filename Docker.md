@@ -22,17 +22,22 @@ apt install -y build-essential python3 python-is-python3 python3-poetry nodejs n
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 keep pressing `ENTER` until you see a cyan "~" prompt on terminal
+---
+** Zsh Plugins **
+| Plugin | Command |
+| :----- | :------ |
+| zsh-syntax-highlighting | `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting` |
+| zsh-autosuggestions | `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions` |
 
 
 ## 4. Modify .zshrc
 ```sh, bash, zsh
-cd ~/ && \
-nvim .zshrc
+nvim ~/.zshrc
 ```
 - Change / Add Following Lines
 ```
-EDITOR="nvim"
-theme="clean"
+export EDITOR="nvim"
+ZSH_THEME="clean"
 alias zshconfig="$EDITOR ~/.zshrc"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ```
