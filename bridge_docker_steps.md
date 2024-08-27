@@ -29,6 +29,13 @@ I will do my best to reply.
 3. ### Install **pyenv**
 	- For more details, please head to [**"official github"**](https://github.com/pyenv/pyenv)
 
+	- **Requirements** :
+		- **Ubuntu** :
+			```bash, zsh
+	  		sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
+			libbz2-dev libreadline-dev libsqlite3-dev curl git \
+			libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+	  		```
 	- **Automatic Installer** :
 		```bash, zsh
 		curl https://pyenv.run | bash
