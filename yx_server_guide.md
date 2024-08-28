@@ -1,6 +1,6 @@
 -   [Intro](#intro)
 -   [Update System Package Manager](#update-system-package-manager)
--   [Install necessary tools & dependencies](#install-necessary-tools-dependencies)
+-   [Install Necessary Tools & Dependencies](#install-necessary-tools-dependencies)
 -   [Install "NVM" (Node Version Manager)](#install-nvm-node-version-manager)
 -   [Install "Pyenv"](#install-pyenv)
 -   [Install "Poetry"](#install-poetry)
