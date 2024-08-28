@@ -1,120 +1,126 @@
 # **YapersX Server Enviroment Setup Guide**
-## **Intro**
+## Intro
 This manual will guide you through the whole setup without concerns.
 
-## **Manual**
-1. ### Update System Package Manager
- 	- **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
-		```bash, zsh
-		apt update && apt upgrade -y
-		```
-	 	- Add `sudo` if nessessary
+## Update System Package Manager
+1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
+	```sh
+	apt update && apt upgrade -y
+	```
+- Additional Notes :
+	- Add `sudo` if nessessary
 
-3. ### Install necessary tools & dependencies
-	- **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
-		```bash, zsh
-		apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
-	 	libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils \
-	 	tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-		```
-	 	- Add `sudo` if nessessary
+## Install necessary tools & dependencies
+1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
+	```sh
+	apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
+	libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils \
+	tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+	```
+ 
+- Additional Notes :
+	- Add `sudo` if nessessary
 
-2. ### Install "NVM" (Node Version Manager)
-   	- Download & install latest version : [**"Official Installation Guide"**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
-		- You may need to restart your terminal to take effects
+## Install "NVM" (Node Version Manager)
+1. Download & install latest version : [**"Official Installation Guide"**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+	- You may need to restart your terminal to take effects
 
-	- **Install nodejs through "nvm"** :
-		```bash, zsh
-		nvm install node
-		```
-		- This will install current latest version
-       
+2. **Install nodejs through "nvm"** :
+	```sh
+	nvm install node
+	```
+	- This will install current latest version
+
+- Additional Notes :
 	- For more details, please head to the [**"Official Github"**](https://github.com/nvm-sh/nvm)
 
-4. ### Install "Pyenv"
-	- **Execute Official Installer** :
-		```bash, zsh
-		curl https://pyenv.run | bash
-		```
-  
-	- Install **"Python 3.8"** :
-		```bash, zsh
-  		pyenv install 3.8.19
-  		```
-  
+## Install "Pyenv"
+1. **Execute Official Installer** :
+	```sh
+	curl https://pyenv.run | bash
+	```
+
+2. Install **"Python 3.8"** :
+	```sh
+	pyenv install 3.8.19
+	```
+
+- Additional Notes :
 	- For more details, please head to [**"Official Github"**](https://github.com/pyenv/pyenv)
  
-5. ### Install "Poetry"
-	- **Automatic Installer** :
-		- **Install** : 
-			```bash, zsh
-			curl -sSL https://install.python-poetry.org | python3 -
-			```
-		- **Uninstall** : 
-			```bash, zsh
-			curl -sSL https://install.python-poetry.org | python3 - --uninstall
-			```
-   
+## Install "Poetry"
+1. **Automatic Installer** :
+	- **Install** : 
+		```sh
+		curl -sSL https://install.python-poetry.org | python3 -
+		```
+	- **Uninstall** : 
+		```sh
+		curl -sSL https://install.python-poetry.org | python3 - --uninstall
+		```
+
+ - Additional Notes :
 	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/#installation)
+ 
+## Configuration for "NVM", "Pyenv", and "Poetry"
+1. Append following lines under **".bashrc", ".zshrc"**, or any **Bourne-compatible shell configuration files**:
+	```sh
+	# Poetry & Other Local Executable Exports
+	export PATH="$HOME/.local/bin:$PATH"
 
-6. ### Configuration for "NVM", "Pyenv", and "Poetry"
-	- Append following lines under **".bashrc", ".zshrc"**, or any **Bourne-compatible shell configuration files**:
-		``` bash, zsh
-		# Poetry & Other Local Executable Exports
-		export PATH="$HOME/.local/bin:$PATH"
+	# Pyenv Exports
+	export PYENV_ROOT="$HOME/.pyenv"
+	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+	```
+	These lines enable **"nvm", "pyenv"**, and **"poetry"** on your shell
 
-		# Pyenv Exports
-		export PYENV_ROOT="$HOME/.pyenv"
-		[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-		eval "$(pyenv init -)"
+2. After the modification, restart your terminal, check if installation was successfully by executing following lines:
+	```sh
+	nvm --version
+	poetry --version
+	pyenv --version
+	```
+	if thoes runs without errors, then you are good to go.
+
+3. Execute configuration:
+	- **"Poetry"**
+		```sh
+		poetry config virtualenvs.in-project true
 		```
-  		These lines enable **"nvm", "pyenv"**, and **"poetry"** on your shell
+	You may need to restart your terminal to take effects
 
-	- After the modification, relaunch your terminal, check if installation was successfully by executing following lines:
-		```bash, zsh
-		nvm --version
-		poetry --version
-		pyenv --version
+## Clone Project Files
+- Execute following lines :
+	- **Bridge**:
+		```sh
+		git clone -b bridge https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git bridge
 		```
-		if thoes runs without errors, then you are good to go.
+		- Add `sudo` if nessessary
 
-	- Execute configuration:
-   	  	- **"Poetry"**
-   			```bash, zsh
-   	  		poetry config virtualenvs.in-project true
-   	  		```
-		You may need to restart your terminal to take effects
-
-7. ### Clone Project Files
-   	- Execute following lines :
-		- **Bridge**:
-			```bash, zsh
-			git clone -b bridge https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git bridge
-			```
-   			- Add `sudo` if nessessary
-	
-		- **Server**:
-			```bash, zsh
-			git clone -b server https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git server
-			```
-   			- Add `sudo` if nessessary
-
-	Now your current folder will have 2 folders, **"bridge"** and **"server"**
-	
-	- To initialize bridge, run following lines:
-		```bash, zsh
-		cd ./bridge/src/
-		poetry shell
-		poetry install
-  		poetry env use python3.8
-  		python main.py
+	- **Server**:
+		```sh
+		git clone -b server https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git server
 		```
-  		At this point, you should see a **"YX PyBridge"** banner on your terminal and other prompts
+		- Add `sudo` if nessessary
 
-	- To initialize server, run following lines:
-		```bash, zsh
-		cd ./server/
-		nvm install node
-		npm install
-  		npm run dev
-		```
+Now your current folder will have 2 folders, **"bridge"** and **"server"**
+
+- To initialize bridge, run following lines:
+	```sh
+	cd ./bridge/src/
+	poetry shell
+	poetry install
+	poetry env use python3.8
+	python main.py
+	```
+	At this point, you should see a **"YX PyBridge"** banner on your terminal and other prompts
+
+- To initialize server, run following lines:
+	```sh
+	cd ./server/
+	nvm install node
+	npm install
+	npm run dev
+	```
+ 	Now you may go to `http://localhost:3000` to see if server is up
