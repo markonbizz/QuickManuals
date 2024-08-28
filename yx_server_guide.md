@@ -1,14 +1,14 @@
-[[__TOC__]]
+# **YapersX Server Enviroment Setup Guide**
+
+## Table of Contents
 - [Intro](#intro)
 - [Update System Package Manager](#update-system-package-manager)
-- [Install Necessary Tools & Dependencies](#install-necessary-tools-&-dependencies)
+- [Install Necessary Tools & Dependencies](#install-necessary-tools--dependencies)
 - [Install "NVM" (Node Version Manager)](#install-nvm-node-version-manager)
 - [Install "Pyenv"](#install-pyenv)
 - [Install "Poetry"](#install-poetry)
-- [Configuration for "NVM", "Pyenv", and "Poetry"](#configuration-for-nvm-pyenv-and-poetry)
+- [Configuration for "NVM", "Pyenv", "Poetry"](#configuration-for-nvm-pyenv-poetry)
 - [Clone Project Files](#clone-project-files)
-
-# **YapersX Server Enviroment Setup Guide**
 
 ## Intro
 This manual will guide you through the whole setup without concerns.
