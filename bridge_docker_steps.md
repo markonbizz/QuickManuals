@@ -32,15 +32,6 @@ This manual will guide you through the whole setup without concerns.
 	- For more details, please head to the [**"Official Github"**](https://github.com/nvm-sh/nvm)
 
 4. ### Install "Pyenv"
-	- **Prerequisite** :
-		- **For Ubuntu** :
-			```bash, zsh
-	  		apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
-			libbz2-dev libreadline-dev libsqlite3-dev curl git \
-			libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-	  		```
-   			- Add `sudo` if nessessary
-    
 	- **Execute Official Installer** :
 		```bash, zsh
 		curl https://pyenv.run | bash
