@@ -119,7 +119,6 @@ Now your current folder will have 2 folders, **"bridge"** and **"server"**
 - To initialize server, run following lines:
 	```sh
 	cd ./server/
-	nvm install node
 	npm install
 	npm run dev
 	```
