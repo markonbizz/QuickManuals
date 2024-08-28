@@ -20,7 +20,7 @@ This manual will guide you through the whole setup without concerns.
 - Additional Notes :
 	- Add `sudo` if nessessary
 
-## Install necessary tools & dependencies
+## Install Necessary Tools & Dependencies
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
 	apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
