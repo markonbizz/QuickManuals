@@ -1,4 +1,4 @@
-__TOC__
+[[__TOC__]]
 - [Intro](#intro)
 - [Update System Package Manager](#update-system-package-manager)
 - [Install Necessary Tools & Dependencies](#install-necessary-tools-&-dependencies)
