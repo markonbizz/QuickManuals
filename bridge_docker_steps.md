@@ -1,4 +1,5 @@
 # **YapersX Server Enviroment Setup Guide**
+
 ## Intro
 This manual will guide you through the whole setup without concerns.
 
@@ -89,6 +90,9 @@ This manual will guide you through the whole setup without concerns.
 		poetry config virtualenvs.in-project true
 		```
 	You may need to restart your terminal to take effects
+
+- Additional Notes :
+	- For more details, please head to [**"NVM"**](https://github.com/nvm-sh/nvm), [**"Poetry"**](https://python-poetry.org/docs/#installation), [**"Pyenv"**](https://github.com/pyenv/pyenv)
 
 ## Clone Project Files
 - Execute following lines :
