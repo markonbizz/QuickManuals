@@ -1,79 +1,85 @@
 # **YapersX Server Enviroment Setup Guide**
-## **Introduction**
+## **Intro**
 This manual will guide you through the whole setup without concerns.
 
-For any issue, contact "cbb111237@nptu.edu.tw", or Teams.
-
-I will do my best to reply.
-
 ## **Manual**
-1. ### Update Ubuntu
-	```bash, zsh
-	apt update && apt upgrade -y
-	```
+1. ### Update System Package Manager
+ 	- **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
+		```bash, zsh
+		apt update && apt upgrade -y
+		```
+	 	- Add `sudo` if nessessary
 
-2. ### Install **nvm** (Node Version Manager)
-	- For more details or latest version, please head to the [**"official github"**](https://github.com/nvm-sh/nvm)
+3. ### Install necessary tools & dependencies
+	- **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
+		```bash, zsh
+		apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
+	 	libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils \
+	 	tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+		```
+	 	- Add `sudo` if nessessary
 
-	- **Version v0.40.0**
-		- **For "curl"**:
+2. ### Install "NVM" (Node Version Manager)
+   	- Download & install latest version : [**"Official Installation Guide"**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+		- You may need to restart your terminal to take effects
+
+	- **Install nodejs through "nvm"** :
+		```bash, zsh
+		nvm install node
+		```
+		- This will install current latest version
+       
+	- For more details, please head to the [**"Official Github"**](https://github.com/nvm-sh/nvm)
+
+4. ### Install "Pyenv"
+	- **Prerequisite** :
+		- **For Ubuntu** :
 			```bash, zsh
-			curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-			```
-
-		- **For "wget"**:
-			```bash, zsh
-			wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
-			```
-		
-3. ### Install **pyenv**
-	- For more details, please head to [**"official github"**](https://github.com/pyenv/pyenv)
-
-	- **Requirements** :
-		- **Ubuntu** :
-			```bash, zsh
-	  		sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
+	  		apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
 			libbz2-dev libreadline-dev libsqlite3-dev curl git \
 			libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 	  		```
-	- **Automatic Installer** :
+   			- Add `sudo` if nessessary
+    
+	- **Execute Official Installer** :
 		```bash, zsh
 		curl https://pyenv.run | bash
 		```
-	
-4. ### Install **poetry**
-	- For more details, please head to [**"official site"**](https://python-poetry.org/docs/#installation)
-
+  
+	- Install **"Python 3.8"** :
+		```bash, zsh
+  		pyenv install 3.8.19
+  		```
+  
+	- For more details, please head to [**"Official Github"**](https://github.com/pyenv/pyenv)
+ 
+5. ### Install "Poetry"
 	- **Automatic Installer** :
-		- To **Install** : 
+		- **Install** : 
 			```bash, zsh
 			curl -sSL https://install.python-poetry.org | python3 -
 			```
-		- To **Uninstall** : 
+		- **Uninstall** : 
 			```bash, zsh
 			curl -sSL https://install.python-poetry.org | python3 - --uninstall
 			```
+   
+	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/#installation)
 
-5. ### Add Paths
-	Add paths for **nvm**, **pyenv**, and **poetry** under **.bashrc**, **.zshrc**, or other **Bourne-compatible shells**
-
-	- For **".bashrc" & ".zshrc"**, append following lines at the end of the file:
-		``` bash
+6. ### Configuration for "NVM", "Pyenv", and "Poetry"
+	- Append following lines under **".bashrc", ".zshrc"**, or any **Bourne-compatible shell configuration files**:
+		``` bash, zsh
 		# Poetry & Other Local Executable Exports
 		export PATH="$HOME/.local/bin:$PATH"
-
-		# NVM Exports
-		export NVM_DIR="$HOME/.nvm"
-		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-		[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 		# Pyenv Exports
 		export PYENV_ROOT="$HOME/.pyenv"
 		[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 		eval "$(pyenv init -)"
 		```
+  		These lines enable **"nvm", "pyenv"**, and **"poetry"** on your shell
 
-	- After the modify, exit current terminal then relaunch, check if installation was successfully by run following lines:
+	- After the modification, relaunch your terminal, check if installation was successfully by executing following lines:
 		```bash, zsh
 		nvm --version
 		poetry --version
@@ -81,30 +87,43 @@ I will do my best to reply.
 		```
 		if thoes runs without errors, then you are good to go.
 
-6. ### Clone The Project
-	- For **Bridge**:
-		```bash, zsh
-		git clone -b bridge https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git bridge
-		```
+	- Execute configuration:
+   	  	- **"Poetry"**
+   			```bash, zsh
+   	  		poetry config virtualenvs.in-project true
+   	  		```
+		You may need to restart your terminal to take effects
 
-	- For **Server**:
-		```bash, zsh
-		git clone -b server https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git server
-		```
+7. ### Clone Project Files
+   	- Execute following lines :
+		- **Bridge**:
+			```bash, zsh
+			git clone -b bridge https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git bridge
+			```
+   			- Add `sudo` if nessessary
+	
+		- **Server**:
+			```bash, zsh
+			git clone -b server https://git.csie2.nptu.edu.tw/yapers/yapersX/yapersx-server.git server
+			```
+   			- Add `sudo` if nessessary
 
 	Now your current folder will have 2 folders, **"bridge"** and **"server"**
 	
 	- To initialize bridge, run following lines:
 		```bash, zsh
-		poetry config virtualenvs.in-project true
 		cd ./bridge/src/
 		poetry shell
 		poetry install
+  		poetry env use python3.8
+  		python main.py
 		```
+  		At this point, you should see a **"YX PyBridge"** banner on your terminal and other prompts
 
 	- To initialize server, run following lines:
 		```bash, zsh
 		cd ./server/
 		nvm install node
 		npm install
+  		npm run dev
 		```
