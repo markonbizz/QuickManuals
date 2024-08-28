@@ -1,8 +1,19 @@
+-   [Intro](#intro)
+-   [Update System Package Manager](#update-system-package-manager)
+-   [Install necessary tools & dependencies](#install-necessary-tools-dependencies)
+-   [Install "NVM" (Node Version Manager)](#install-nvm-node-version-manager)
+-   [Install "Pyenv"](#install-pyenv)
+-   [Install "Poetry"](#install-poetry)
+-   [Configuration for "NVM", "Pyenv", and "Poetry"](#configuration-for-nvm-pyenv-and-poetry)
+-   [Clone Project Files](#clone-project-files)
+
 # **YapersX Server Enviroment Setup Guide**
 
+<a id='intro'></a>
 ## Intro
 This manual will guide you through the whole setup without concerns.
 
+<a id='update-system-package-manager'></a>
 ## Update System Package Manager
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
@@ -11,6 +22,7 @@ This manual will guide you through the whole setup without concerns.
 - Additional Notes :
 	- Add `sudo` if nessessary
 
+<a id='install-necessary-tools-dependencies'></a>
 ## Install necessary tools & dependencies
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
@@ -22,6 +34,7 @@ This manual will guide you through the whole setup without concerns.
 - Additional Notes :
 	- Add `sudo` if nessessary
 
+<a id='install-nvm-node-version-manager'></a>
 ## Install "NVM" (Node Version Manager)
 1. Download & install latest version : [**"Official Installation Guide"**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
 	- You may need to restart your terminal to take effects
@@ -35,6 +48,7 @@ This manual will guide you through the whole setup without concerns.
 - Additional Notes :
 	- For more details, please head to the [**"Official Github"**](https://github.com/nvm-sh/nvm)
 
+<a id='install-pyenv'></a>
 ## Install "Pyenv"
 1. **Execute Official Installer** :
 	```sh
@@ -48,7 +62,8 @@ This manual will guide you through the whole setup without concerns.
 
 - Additional Notes :
 	- For more details, please head to [**"Official Github"**](https://github.com/pyenv/pyenv)
- 
+
+<a id='install-poetry'></a>
 ## Install "Poetry"
 1. **Automatic Installer** :
 	- **Install** : 
@@ -62,7 +77,8 @@ This manual will guide you through the whole setup without concerns.
 
  - Additional Notes :
 	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/#installation)
- 
+
+<a id='configuration-for-nvm-pyenv-and-poetry'></a>
 ## Configuration for "NVM", "Pyenv", and "Poetry"
 1. Append following lines under **".bashrc", ".zshrc"**, or any **Bourne-compatible shell configuration files**:
 	```sh
@@ -94,6 +110,7 @@ This manual will guide you through the whole setup without concerns.
 - Additional Notes :
 	- For more details, please head to [**"NVM"**](https://github.com/nvm-sh/nvm), [**"Poetry"**](https://python-poetry.org/docs/#installation), [**"Pyenv"**](https://github.com/pyenv/pyenv)
 
+<a id='clone-project-files'></a>
 ## Clone Project Files
 - Execute following lines :
 	- **Bridge**:
