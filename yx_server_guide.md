@@ -1,6 +1,6 @@
 -   [Intro](#intro)
 -   [Update System Package Manager](#update-system-package-manager)
--   [Install Necessary Tools & Dependencies](#install-necessary-tools-dependencies)
+-   [Install Necessary Tools, Dependencies](#install-necessary-tools,-dependencies)
 -   [Install "NVM" (Node Version Manager)](#install-nvm-node-version-manager)
 -   [Install "Pyenv"](#install-pyenv)
 -   [Install "Poetry"](#install-poetry)
@@ -20,7 +20,7 @@ This manual will guide you through the whole setup without concerns.
 - Additional Notes :
 	- Add `sudo` if nessessary
 
-## Install Necessary Tools & Dependencies
+## Install Necessary Tools, Dependencies
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
 	apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
@@ -72,7 +72,7 @@ This manual will guide you through the whole setup without concerns.
  - Additional Notes :
 	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/#installation)
 
-## Configuration for "NVM", "Pyenv", and "Poetry"
+## Configuration for "NVM", "Pyenv", "Poetry"
 1. Append following lines under **".bashrc", ".zshrc"**, or any **Bourne-compatible shell configuration files**:
 	```sh
 	# Poetry & Other Local Executable Exports
