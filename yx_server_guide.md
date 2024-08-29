@@ -17,24 +17,24 @@ This manual will guide you through the whole setup without concerns.
 ## Update System Package Manager
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
-	apt update && apt upgrade -y
+	sudo apt update && sudo apt upgrade -y
 	```
  
 - Additional Notes :
-	- Add `sudo` if nessessary
+	- Remove `sudo` if nessessary
 
 
 ## Install Necessary Tools & Dependencies
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
-	apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
+	sudo apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
 	libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils \
 	tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev python3
 	```
  
 - Additional Notes :
   	- If appears **region selection menu**, please choose `5. Asia`, then `72. Taipei`
-	- Add `sudo` if nessessary
+	- Remove `sudo` if nessessary
 
 
 ## Install "NVM" (Node Version Manager)
