@@ -126,7 +126,7 @@ This manual will guide you through the whole setup without concerns.
    		```
 
 - Additional Notes :
-	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/#installation)
+	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/main/)
 
 
 ## Clone Project Files
