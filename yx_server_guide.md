@@ -7,51 +7,91 @@
 - [Install "NVM" (Node Version Manager)](#install-nvm-node-version-manager)
 - [Install "Pyenv"](#install-pyenv)
 - [Install "Poetry"](#install-poetry)
-- [Configuration for "NVM", "Pyenv", "Poetry"](#configuration-for-nvm-pyenv-poetry)
 - [Clone Project Files](#clone-project-files)
+
 
 ## Intro
 This manual will guide you through the whole setup without concerns.
+
 
 ## Update System Package Manager
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
 	apt update && apt upgrade -y
 	```
+ 
 - Additional Notes :
 	- Add `sudo` if nessessary
+
 
 ## Install Necessary Tools & Dependencies
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
 	apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
 	libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils \
-	tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+	tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev python3
 	```
  
 - Additional Notes :
+  	- If appears **region selection menu**, please choose `5. Asia`, then `72. Taipei`
 	- Add `sudo` if nessessary
+
 
 ## Install "NVM" (Node Version Manager)
 1. Download & install latest version : [**"Official Installation Guide"**](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
-	- You may need to restart your terminal to take effects
+	- By **"curl"**:
+		```sh
+	 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+	 	```
+  
+	- By **"wget"**:
+		```sh
+		wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+	 	```
+  
+- **Restart your terminal** to take effects
 
-2. **Install nodejs through "nvm"** :
+2. Check **nvm version**:
+	- By executing following lines to insure nvm was installed correctly:
+ 		```sh
+   		nvm --version
+   		```
+ 
+3. **Install nodejs through "nvm"** :
 	```sh
 	nvm install node
 	```
+ 
 	- This will install current latest version
 
 - Additional Notes :
+	- Latest download link on **2024 August, 26**
 	- For more details, please head to the [**"Official Github"**](https://github.com/nvm-sh/nvm)
+
 
 ## Install "Pyenv"
 1. **Execute Official Installer** :
 	```sh
 	curl https://pyenv.run | bash
 	```
+ 
+2. Export **pyenv path** to your **.bashrc, .zshrc**, or any **Bourne-compatible shell configuration files**
+	```sh
+ 	# Pyenv Exports
+	export PYENV_ROOT="$HOME/.pyenv"
+	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+ 	```
+ 
+- **Restart your terminal** to take effects
 
-2. Install **"Python 3.8"** :
+3. Check **pyenv version**:
+	- By executing following lines to insure nvm was installed correctly:
+ 		```sh
+   		pyenv --version
+   		```
+
+4. Install **"Python 3.8"** :
 	```sh
 	pyenv install 3.8.19
 	```
@@ -59,50 +99,36 @@ This manual will guide you through the whole setup without concerns.
 - Additional Notes :
 	- For more details, please head to [**"Official Github"**](https://github.com/pyenv/pyenv)
 
+
 ## Install "Poetry"
-1. **Automatic Installer** :
+1. **Download latest version from official site** :
 	- **Install** : 
 		```sh
 		curl -sSL https://install.python-poetry.org | python3 -
 		```
+  
 	- **Uninstall** : 
 		```sh
 		curl -sSL https://install.python-poetry.org | python3 - --uninstall
 		```
-
- - Additional Notes :
-	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/#installation)
-
-## Configuration for "NVM", "Pyenv", "Poetry"
-1. Append following lines under **".bashrc", ".zshrc"**, or any **Bourne-compatible shell configuration files**:
+  
+2. Export **poetry path** to your **.bashrc, .zshrc**, or any **Bourne-compatible shell configuration files**
 	```sh
-	# Poetry & Other Local Executable Exports
+ 	# Poetry & Other Local Executable Exports
 	export PATH="$HOME/.local/bin:$PATH"
-
-	# Pyenv Exports
-	export PYENV_ROOT="$HOME/.pyenv"
-	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
-	```
-	These lines enable **"nvm", "pyenv"**, and **"poetry"** on your shell
-
-2. After the modification, restart your terminal, check if installation was successfully by executing following lines:
-	```sh
-	nvm --version
-	poetry --version
-	pyenv --version
-	```
-	if thoes runs without errors, then you are good to go.
-
-3. Execute configuration:
-	- **"Poetry"**
-		```sh
-		poetry config virtualenvs.in-project true
-		```
-	You may need to restart your terminal to take effects
+ 	```
+ 
+- **Restart your terminal** to take effects
+ 
+3. Check **poetry version**:
+	- By executing following lines to insure nvm was installed correctly:
+ 		```sh
+   		poetry --version
+   		```
 
 - Additional Notes :
-	- For more details, please head to [**"NVM"**](https://github.com/nvm-sh/nvm), [**"Poetry"**](https://python-poetry.org/docs/#installation), [**"Pyenv"**](https://github.com/pyenv/pyenv)
+	- For more details, please head to [**"Official Site"**](https://python-poetry.org/docs/#installation)
+
 
 ## Clone Project Files
 - Execute following lines :
