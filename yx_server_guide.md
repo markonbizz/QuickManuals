@@ -27,9 +27,7 @@ This manual will guide you through the whole setup without concerns.
 ## Install Necessary Tools & Dependencies
 1. **Debian based (Ubuntu / Raspberry Pi OS, etc)** :
 	```sh
-	sudo apt install -y git curl wget build-essential libssl-dev zlib1g-dev \
-	libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils \
-	tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev python3
+	sudo apt install -y git curl wget build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev python3
 	```
  
 - Additional Notes :
