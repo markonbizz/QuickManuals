@@ -52,7 +52,7 @@ This manual will guide you through the whole setup without concerns.
 - **Restart your terminal** to take effects
 
 2. Check **nvm version**:
-	- By executing following lines to insure nvm was installed correctly:
+	- By executing following lines to insure **"nvm"** was installed correctly:
  		```sh
    		nvm --version
    		```
@@ -60,6 +60,7 @@ This manual will guide you through the whole setup without concerns.
 3. **Install nodejs through "nvm"** :
 	```sh
 	nvm install node
+ 	node --version
 	```
  
 	- This will install current latest version
@@ -86,7 +87,7 @@ This manual will guide you through the whole setup without concerns.
 - **Restart your terminal** to take effects
 
 3. Check **pyenv version**:
-	- By executing following lines to insure nvm was installed correctly:
+	- By executing following lines to insure **"pyenv"** was installed correctly:
  		```sh
    		pyenv --version
    		```
@@ -121,7 +122,7 @@ This manual will guide you through the whole setup without concerns.
 - **Restart your terminal** to take effects
  
 3. Check **poetry version**:
-	- By executing following lines to insure nvm was installed correctly:
+	- By executing following lines to insure **poetry** was installed correctly:
  		```sh
    		poetry --version
    		```
